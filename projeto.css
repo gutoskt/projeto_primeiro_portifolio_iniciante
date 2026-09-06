@@ -1,0 +1,546 @@
+*{
+    margin:0;
+    padding:0;
+    outline:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth; /* Suaviza o scroll ao clicar nos links */
+}
+
+/* --- INÍCIO: Bloco para esconder a barra de rolagem --- */
+
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;  /* Força a largura para 0 */
+  height: 0; /* Força a altura para 0 */
+  background: transparent; /* Garante que não haja fundo */
+}
+
+/* Para Firefox */
+html, body {
+  scrollbar-width: none;
+}
+
+/* Para IE e Edge (legado) */
+html, body {
+  -ms-overflow-style: none;
+}
+
+/* --- FIM: Bloco para esconder a barra de rolagem --- */
+
+/*INICIO HEADER*/
+
+.oculto{
+
+    display: none;
+}
+
+.nav{
+    background-color: #181818;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; /* Fixa o header no topo */
+    top: 0px; /* Fixa no topo da página */
+    z-index: 9; /* Garante que o header fique acima de outros elementos */
+}
+
+/* 1. O container da label (configura o tamanho) */
+.corProjeto {
+  margin-left: 50px;
+  position: relative;
+  display: inline-block;
+  width: 60px;  /* Largura do botão */
+  height: 34px; /* Altura do botão */
+}
+
+/* 2. Esconder o checkbox original */
+.corProjeto input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 3. O "trilho" do botão (o span "sliper") */
+.sliper {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white; /* Cor de fundo (desligado) */
+  transition: .4s;
+}
+
+/* 4. O "pino" circular (criado com ::before) */
+.sliper::before {
+  position: absolute;
+  content: ""; /*Crie este elemento, mesmo que ele não tenha nenhum conteúdo de texto.*/
+  height: 22px; /* Tamanho do pino circular */
+  width: 22px;  /* Tamanho do pino circular */
+  left: 4px;    /* Posição inicial (esquerda) */
+  bottom: 4px;
+  background-color: yellow;
+  border: 2px solid orange;
+  transition: .4s;
+}
+
+/* 5. A mágica do "round" (circular) */
+.sliper.round {
+  border-radius: 34px; /* Deixa o trilho com pontas redondas */
+}
+
+.sliper.round::before {
+  border-radius: 50%; /* Deixa o pino perfeitamente circular */
+}
+
+/* 6. Estilos QUANDO ESTIVER LIGADO (checked) */
+
+/* Muda a cor do trilho para azul quando marcado */
+.corProjeto input:checked + .sliper {
+  background-color: black;
+}
+
+.corProjeto input:checked + .sliper::before {
+  background-color: purple;
+  border: 2px solid blue;
+}
+
+/* Move o pino circular para a direita */
+.corProjeto input:checked + .sliper::before {
+  transform: translateX(26px);
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.nav-list button{
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0px;
+    border: 0px;
+    background-color: #181818;
+    color: #DDD;
+    padding: 20px;
+}
+
+.nav-list button:hover{
+    color:#20efd7;
+}
+
+/*FIM HEADER*/
+
+/*INICIO SECTION*/
+
+.main{
+    width: 100%;
+    background-color: #000;
+    height: calc(100vh - 70px); /* Altura total da tela  - View port
+    cal - Calculadora de CSS */
+    background-image:url("imagens/fundoproj.png");
+    background-size: cover; /* Ajusta a imagem ao tamanho do container */
+    background-position: center; /* Centraliza a imagem */
+    display:flex;
+    align-items:center; /* Alinha verticalmente ao centro */
+    padding-left: 10%;
+    justify-content: space-between; /* Espaça os itens igualmente */
+}
+
+.main h1{
+    color: #FFFFFF;
+    font-size: 55px; /* Tamanho do texto */
+}
+
+.main p{
+    color: #20efd7;
+    font-size: 24px;
+    font-style: italic;
+    margin-top:10px;
+    margin-bottom: 35px;
+}
+
+.call-to-action{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border: 0;
+    padding: 15px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.9s; /* Transição suave para o efeito de hover */
+}
+
+.call-to-action:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.main img{
+    width: 20%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 50%;
+    border: 4px solid #20efd7; /* Borda verde */
+    margin-right: 200px;
+    transition: transform 0.9s ease; /* Transição suave para o efeito de hover */
+}
+
+.main img:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+
+.main a{
+    text-decoration: none;
+    color: #181818;
+}
+
+/*FIM SECTION*/
+
+/*INICIO SOBRE*/
+
+.sobre{
+    background-color: #FFFFFF;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-left: 40px;
+}
+
+.sobre-content div{
+    max-width: 50%;
+    padding-left: 40px;
+}
+
+.sobre-content img{
+    max-width: 40%;
+    border-radius: 8px;
+    border: 0px;
+    transition: 0.9s;
+}
+
+.sobre img:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.sobre h2{
+    font-size: 32px;
+    color: #20efd7;
+    margin-bottom: 80px;
+}
+
+.sobre-content p{
+    font-size: 18px;
+    color: #181818;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+}
+
+.sobre1{
+    background-color: #FFFFFF;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sobre1 div{
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.sobre1 img{
+    width: 30%;
+    border-radius: 8px;
+    border: 0px;
+    transition: 0.9s;
+}
+
+.sobre1 img:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.sobre1 div p{
+    font-size: 18px;
+    color: #181818;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+}
+ /*FINAL DO SOBRE*/
+
+ /*INICIO SESSÃO PROJETO*/
+
+.projeto{
+    width: 100%;
+    background-color: #181818;
+    background-image: url('Imagens/fundoproj.png');
+    background-size: cover; /* Ajusta a imagem ao tamanho do container */
+    background-position: center; /* Centraliza a imagem */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.projeto div img{
+    width: 20%;
+    border-radius: 8px;
+    
+    margin: 15px;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.9s ease; /* Transição suave para o efeito de hover */
+ }
+
+.projeto img:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */  
+    opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
+.projeto h2{
+    font-size: 32px;
+    color: #20efd7;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.projeto p{
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+    
+.projeto-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orcamento{
+    background-color: #FFFFFF;
+    color: #181818;
+    border: 0;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+.orcamento:hover{
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+ /*FINAL SESSÃO PROJETO*/
+
+/* INICIO DO RODAPÉ*/
+
+.rodape{
+    width: 100%;
+    height: 240px;
+    padding-top: 20px;
+    color: #FFFFFF;
+    background-image: url('Imagens/rodape.png');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.rodape h2{
+    margin-top: 40px;
+}
+.rodape p{
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.rodape a{
+    text-decoration: none;
+    text-align: center;
+    margin-left: 5px;
+    color: #FFFFFF;
+}
+
+.rodape a:hover{
+    color: #20efd7;
+}
+
+.rodape-content{
+
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape-content img{
+    width: 4%;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.cont-imagem{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.cont-imagem img{
+    width: 50px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cont-imagem img:hover{
+    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+/* FINAL DO RODAPÉ*/
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px){
+
+    .main{
+        flex-direction: column; /* Altera a direção do layout para coluna */
+        align-items: center; /* Centraliza os itens */
+        padding-left: 0; /* Remove o padding esquerdo */
+        padding-right: 0; /* Remove o padding direito */
+    }
+
+    .main h1{
+        font-size: 45px;
+        margin-top: 80px;
+        margin-left: 0px;
+    }
+
+    .main p{
+        font-size: 20px;
+    }
+
+    .main img{
+        width: 30%; /* Aumenta a largura da imagem */
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 100px; /* Adiciona margem inferior para espaçamento */
+    }
+
+    .sobre{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .sobre-content{
+        flex-direction: column;
+        padding-top: 80px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+
+    .sobre-content div{
+        max-width: 80%;
+    }
+    
+    .sobre h2{
+        font-size: 45px;
+        margin-bottom: 5px;
+    }
+
+    .sobre-content img{
+        max-width: 60%;
+        margin-bottom: 30px;
+    }
+
+    .sobre1{
+        flex-direction: column;
+        padding-top: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+
+    .sobre1 img{
+        max-width: 60%;
+        margin-bottom: 30px;
+    }
+
+    .sobre1 div{
+        max-width: 80%;
+    }
+
+    /* FIM DO SOBRE */
+
+    /* INICIO PROJETO */
+
+    .projeto div img{
+        width: 27.5%;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 500px){
+    .nav{
+        justify-content: center;
+    }
+
+    .main img{
+        width: 80%; /* Aumenta a largura da imagem */
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 100px; /* Adiciona margem inferior para espaçamento */
+    }
+
+    .sobre1 div{
+        max-width: 80%;
+        margin-left: 80px;
+    }
+
+    .sobre1 img{
+        max-width: 80%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* FIM DO PROJETO */
+}

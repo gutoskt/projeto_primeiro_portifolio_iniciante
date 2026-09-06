@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projeto.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Augusto - Portifólio</title>
+</head>
+<body onload="mostrarnav1()">
+    
+    <!-- INICIO HEADER -->
+    <nav id="nav1"class="nav">
+
+        <ul class="nav-list">
+            <li>
+                <button onclick="mostrarnav1()">Home</button>
+            </li>
+            <li>
+                <button onclick="mostrarsobre()">Sobre</button>
+            </li>
+            <li>
+                <button onclick="mostrarprojeto()">Projeto</button>
+            </li>
+            <li>
+                <button onclick="mostrarcontato()">Contato</button>
+            </li>
+        </ul>
+    </nav>
+    <!-- FIM HEADER -->
+
+    <!-- INICIO MAIN -->
+     <section id="home" class="main">
+        <div>
+            <h1>Olá,<br>Seja bem vindo</h1>
+            <p>Crie soluções para seu negócio!</p>
+            <a href="#projeto">
+                <button class="call-to-action">
+                    Veja meus projetos
+                </button>
+            </a>
+        </div>
+
+        <img src="imagens/foto1.png" alt="Carlos Augusto">
+        
+     </section>
+     <!-- FIM MAIN -->
+
+    <!-- INICIO SOBRE -->
+
+    <section id="sobre" class="sobre">
+
+        <h2>Sobre</h2>
+        <div class="sobre-content">
+            <img src="imagens/foto2.jpeg" alt="Carlos Augusto">
+            
+            <div>
+                <p>
+                Meu nome é Carlos Augusto. Sou um rapaz dedicado, 
+                apaixonado por tecnologia e programação, sempre 
+                em busca de crescimento pessoal e profissional.
+                Nasci na cidade de Manaus, no Estado do Amazonas, e 
+                atualmente tenho 24 anos. 
+                <br><br>
+                Em minha trajetória, duas palavras definem bem meus 
+                valores: Humildade e Evolução. Humildade, para 
+                reconhecer quando é necessário melhorar e estar aberto 
+                às mudanças que me tornem uma pessoa e um profissional melhor.
+
+                Evolução, porque busco diariamente novos conhecimentos, 
+                com o objetivo de me tornar alguém cada vez mais capacitado 
+                e preparado para realizar toda boa obra.
+
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre1" class="sobre1">
+
+        <div>
+            <p>
+            A Universidade Federal do Amazonas (UFAM) é a principal 
+            instituição de ensino superior da região Norte e a mais 
+            antiga do Brasil ainda em atividade, com forte atuação 
+            em ensino, pesquisa e extensão voltados às demandas da 
+            Amazônia. Em meio a esse cenário, estudo no Instituto 
+            de Computação (IComp), um dos centros mais respeitados 
+            em tecnologia da informação na região. <br><br>Curso Engenharia 
+            de Software, uma graduação que alia fundamentos técnicos
+             e inovação para resolver desafios reais. No IComp, tenho
+              a oportunidade de aprender com professores altamente 
+              qualificados e participar de pesquisas em áreas como 
+              inteligência artificial, visão computacional e sistemas 
+              distribuídos, contribuindo para o desenvolvimento 
+              tecnológico da Amazônia.
+
+            </p>
+        </div>
+
+        <img src="imagens/foto3.jpeg" alt="Ufam - Universidade Federal do Amazonas">
+    </section>
+
+    <!-- FIM SOBRE -->
+
+    <!-- INICIO PROJETO -->
+
+    <section id="projeto" class="projeto">
+        <h2>Meus projetos</h2>
+        <p>Conheça meus últimos projetos</p>
+        <div class="projeto-list">
+            <img src="imagens/projeto1.png" alt="Projeto1">
+            <img src="imagens/projeto2.png" alt="Projeto2">
+            <img src="imagens/projeto3.png" alt="Projeto3">
+        </div>
+        <div class="projeto-list">
+            <img src="imagens/projeto3.png" alt="Projeto3">
+            <img src="imagens/projeto1.png" alt="Projeto1">
+            <img src="imagens/projeto2.png" alt="Projeto2">
+        </div>
+
+        <button class="orcamento">
+            Faça um orçamento
+        </button>
+    </section>
+
+    <!-- FIM PROJETO -->
+
+    <!-- INICIO FOOTER -->
+
+    <footer id="contato" class="rodape">
+        <div class="rodape-content">
+            <h2>Feito com zelo por <a href="#sobre"> Carlos Augusto!</a></h2>
+            <img src="imagens/coracao.png" alt="coração">
+        </div>
+
+        <p>© 2025 Carlos Augusto. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Carlos Augusto</p>
+
+        <div class="cont-imagem">
+            <a href="https://www.instagram.com/carlos_august0914/profilecard/?igsh=c2JmMGh2MzY1Nnhk" alt="Instagram Carlos" target="_blank"><img src="imagens/insta.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/carlos-augusto-nunes-vieira-602833304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" alt="LinkedIn Carlos" target="_blank"><img src="imagens/link.png" alt="LinkedIn"></a>
+            <a href="https://github.com/gutoskt" alt="GitHub Carlos" target="_blank"><img src="imagens/git.png" alt="Github"></a>
+            <a href="https://wa.me/559292749502" alt="WhatsApp Carlos" target="_blank"><img src="imagens/what.png" alt="WhatsApp"></a>
+        </div>
+    </footer>
+
+    <!-- FINAL FOOTER-->
+
+    <script src="projeto.js"></script>
+</body>
+</html>
