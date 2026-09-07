@@ -149,10 +149,9 @@ html, body {
 
 .main{
     width: 100%;
-    background-color: #000;
     height: calc(100vh - 70px); /* Altura total da tela  - View port
     cal - Calculadora de CSS */
-    background-image:url("imagens/fundoproj.png");
+    background-image:url('Imagens/fundoproj.png');
     background-size: cover; /* Ajusta a imagem ao tamanho do container */
     background-position: center; /* Centraliza a imagem */
     display:flex;
