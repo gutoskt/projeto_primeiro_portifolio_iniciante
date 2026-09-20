@@ -46,6 +46,8 @@ $ cd projeto_primeiro_portifolio_iniciante
 
 # 3. Abra o arquivo index.html no seu navegador
 
+```
+
 Se estiver usando o **VS Code**, clique com o botão direito no arquivo `index.html` e selecione **Open with Live Server**.
 
 ---
