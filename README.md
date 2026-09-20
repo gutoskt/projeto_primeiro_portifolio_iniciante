@@ -45,3 +45,18 @@ $ git clone [https://github.com/gutoskt/projeto_primeiro_portifolio_iniciante.gi
 $ cd projeto_primeiro_portifolio_iniciante
 
 # 3. Abra o arquivo index.html no seu navegador
+
+Se estiver usando o **VS Code**, clique com o botão direito no arquivo `index.html` e selecione **Open with Live Server**.
+
+---
+
+## 📬 Contato
+
+Caso queira trocar uma ideia ou acompanhar meus projetos:
+
+- **GitHub:** [@gutoskt](https://github.com/gutoskt)
+- **Portfólio Atual:** [projeto-portfolio-segundo.web.app](https://projeto-portfolio-segundo.web.app)
+
+---
+
+Feito com zelo por **Carlos Augusto** ❤️
